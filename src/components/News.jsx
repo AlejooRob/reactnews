@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 
 const News = ({item}) => { 
     // Extract the data
-    const  { urlToImage, url, title, description, source } = item;
+    const  { image, url, title, description, source } = item;
 
-    const image = (urlToImage) ?
+    const imagen = (image) ?
         <div className="card-image">
-            <img src={urlToImage} alt={title} />
+            <img src={image} alt={title} />
             <span className="card-title">{source.name}</span>
         </div>
     : null;
     return (
         <div className="col s12 m6 l4">
             <div className="card">
-                {image}
+                {imagen}
                 <div className="card-content">
                     <h3>{title}</h3>
                     <p>{description}</p>

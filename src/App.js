@@ -10,7 +10,15 @@ function App() {
 
   useEffect(() => {
     const consultAPI = async () =>{
-      const url = `https://newsapi.org/v2/top-headlines?country=mx&category=${category}&apiKey=6ca6d16f8d7f44e881f396bc5c204d89`;
+      
+      const uri = 'https://gnews.io/api/v4/top-headlines?';
+      const countrySelected = `country=pe`;
+      const categorySelected = `topic=${category}`;
+      const apiKey = `token=6380f49be29698a0e25ae4f6e48dac13`;
+      const url = `${uri}${categorySelected}&${countrySelected}&${apiKey}`;
+      
+      
+     // const url = `https://newsapi.org/v2/top-headlines?country=mx&category=${category}&apiKey=6ca6d16f8d7f44e881f396bc5c204d89`;
       const response = await fetch(url);
       const news = await response.json();
 
